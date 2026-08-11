@@ -80,16 +80,16 @@ class _FruitCardState extends State<FruitCard>
               ScaleEffect(
                 begin: Offset(1, 1),
                 end: Offset(0.92, 0.92),
-                duration: const Duration(milliseconds: 120),
+                duration: Duration(milliseconds: 120),
                 curve: Curves.easeOut,
               ),
               ScaleEffect(
                 begin: Offset(0.92, 0.92),
                 end: Offset(1, 1),
-                duration: const Duration(milliseconds: 220),
+                duration: Duration(milliseconds: 220),
                 curve: Curves.elasticOut,
                 // 延迟 120ms：等第一段缩小结束后再弹回
-                delay: const Duration(milliseconds: 120),
+                delay: Duration(milliseconds: 120),
               ),
             ],
             child: _buildContent(),
