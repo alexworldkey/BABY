@@ -164,7 +164,7 @@ class _GameEntryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppTheme.skyBlue.withOpacity(0.35),
+      color: AppTheme.skyBlue.withValues(alpha: 0.35),
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
         onTap: onTap,

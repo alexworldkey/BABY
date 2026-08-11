@@ -65,10 +65,10 @@ class _ParentGateButtonState extends State<ParentGateButton> {
           decoration: BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
-            border: Border.all(color: AppTheme.inkLight.withOpacity(0.3)),
+            border: Border.all(color: AppTheme.inkLight.withValues(alpha: 0.3)),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withValues(alpha: 0.08),
                 blurRadius: 6,
                 offset: const Offset(0, 3),
               ),

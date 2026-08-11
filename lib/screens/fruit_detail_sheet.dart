@@ -181,7 +181,7 @@ class _FruitDetailSheetState extends State<FruitDetailSheet> {
                 width: 48,
                 height: 6,
                 decoration: BoxDecoration(
-                  color: AppTheme.inkLight.withOpacity(0.25),
+                  color: AppTheme.inkLight.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
@@ -191,7 +191,7 @@ class _FruitDetailSheetState extends State<FruitDetailSheet> {
                 height: 180,
                 width: 180,
                 decoration: BoxDecoration(
-                  color: f.fallbackColor.withOpacity(0.2),
+                  color: f.fallbackColor.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(28),
                 ),
                 child: _imageExists
@@ -303,7 +303,7 @@ class _BigButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: color.withOpacity(0.85),
+      color: color.withValues(alpha: 0.85),
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
         onTap: onTap,
@@ -378,7 +378,7 @@ class _PulseWaveState extends State<_PulseWave>
       height: 14 * (0.6 + 0.4 * v * scaleFactor),
       margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
-        color: AppTheme.ink.withOpacity(0.7),
+        color: AppTheme.ink.withValues(alpha: 0.7),
         shape: BoxShape.circle,
       ),
     );

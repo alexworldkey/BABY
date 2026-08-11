@@ -276,10 +276,10 @@ class _GameCardState extends State<_GameCard> {
         borderRadius: BorderRadius.circular(24),
         child: Container(
           decoration: BoxDecoration(
-            color: showImage ? Colors.white : f.fallbackColor.withOpacity(0.25),
+            color: showImage ? Colors.white : f.fallbackColor.withValues(alpha: 0.25),
             borderRadius: BorderRadius.circular(24),
             border: Border.all(
-              color: f.fallbackColor.withOpacity(0.55),
+              color: f.fallbackColor.withValues(alpha: 0.55),
               width: 3,
             ),
           ),

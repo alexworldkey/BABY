@@ -109,15 +109,15 @@ class _FruitCardState extends State<FruitCard>
       // 确保最小触控区域 ≥ 100x100 dp（Grid 会进一步撑大）
       constraints: const BoxConstraints(minHeight: 120),
       decoration: BoxDecoration(
-        color: showImage ? Colors.white : f.fallbackColor.withOpacity(0.25),
+        color: showImage ? Colors.white : f.fallbackColor.withValues(alpha: 0.25),
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: f.fallbackColor.withOpacity(0.55),
+          color: f.fallbackColor.withValues(alpha: 0.55),
           width: 3,
         ),
         boxShadow: [
           BoxShadow(
-            color: f.fallbackColor.withOpacity(0.35),
+            color: f.fallbackColor.withValues(alpha: 0.35),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
