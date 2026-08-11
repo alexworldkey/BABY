@@ -63,7 +63,7 @@ class _WhereIsGameScreenState extends State<WhereIsGameScreen> {
 
   /// 生成新一题：随机目标 + 2~3 张卡片
   void _newRound() {
-    final all = FruitData.all;
+    const all = FruitData.all;
     // 随机选 2~3 张干扰卡（数量 2~3，加上目标共 3~4 张）
     final pool = List<FruitModel>.from(all);
     final targetIdx = _rng.nextInt(pool.length);
@@ -174,7 +174,7 @@ class _WhereIsGameScreenState extends State<WhereIsGameScreen> {
                     ),
                   ),
                   const SizedBox(height: 6),
-                  Text(
+                  const Text(
                     '👆 点一点正确的水果吧',
                     style: TextStyle(
                       fontSize: 15,
