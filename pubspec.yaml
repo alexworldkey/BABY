@@ -1,0 +1,50 @@
+name: baby_english
+description: "宝宝英语启蒙 · 水果英文认知（Fruit Cognition）—— 专为 3 岁幼儿设计的英语启蒙 App"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ---------- 核心依赖 ----------
+  # 音频播放：本地 MP3 语音 / 音效 / 夸奖配音
+  audioplayers: ^6.1.0
+  # 幼儿微交互弹性动画（弹跳、缩放、摇摆）
+  flutter_animate: ^4.5.0
+  # 语音识别：幼儿跟读（Android 端走系统 SpeechRecognizer）
+  speech_to_text: ^7.0.0
+  # 答对/跟读成功时的满屏彩带爆星庆祝特效
+  confetti: ^0.7.0
+
+  # ---------- 辅助工具 ----------
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # ============================================================
+    # 【素材替换说明】
+    # 1. 水果图片：把你的 AI 生成 PNG 放到
+    #    assets/images/fruits/ 下，命名必须为 {id}.png
+    #    例如 apple.png / banana.png / orange.png / strawberry.png
+    #    推荐尺寸 512x512，正方形，透明或纯色背景均可
+    # 2. 水果发音：AI 配音 MP3 放到 assets/audio/fruits/，
+    #    命名必须为 {id}.mp3（如 apple.mp3），推荐 44.1kHz 单声道
+    # 3. 夸奖/提示配音放到 assets/audio/praise/（见注释标注）
+    # 4. 游戏提问语音放到 assets/audio/game/
+    # 5. 文件缺失时 App 会自动回退到图标+文字，不会崩溃
+    # ============================================================
+    - assets/images/fruits/
+    - assets/audio/fruits/
+    - assets/audio/praise/
+    - assets/audio/game/
