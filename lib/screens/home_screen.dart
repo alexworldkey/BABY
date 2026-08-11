@@ -58,10 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final ok = await showParentGateDialog(context);
     if (!ok || !mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('家长模式：这里后续可放音量/发音人设置'),
+      const SnackBar(
+        content: Text('家长模式：这里后续可放音量/发音人设置'),
         behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 2),
+        duration: Duration(seconds: 2),
       ),
     );
   }
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 4),
-              Text(
+              const Text(
                 '点一点水果，听一听英文！',
                 style: TextStyle(
                   fontSize: 16,
