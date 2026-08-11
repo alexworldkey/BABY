@@ -124,9 +124,10 @@ class _ParentDialogState extends State<_ParentDialog> {
         children: [
           const Text('为避免宝宝误触，请回答一道算术题：'),
           const SizedBox(height: 14),
-          Text(
+          // 注：_a/_b 是 static const，所以字符串插值在编译期是常量，可以 const Text
+          const Text(
             '$_a + $_b = ?',
-            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
+            style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 14),
           TextField(
