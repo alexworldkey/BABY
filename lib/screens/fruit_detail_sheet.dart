@@ -240,9 +240,10 @@ class _FruitDetailSheetState extends State<FruitDetailSheet> {
                       icon: Icons.mic,
                       label: _listening ? '正在听…' : '小手试读',
                       color: AppTheme.softPink,
-                      // 跟读中显示脉冲波纹动画代替文字
-                      child: _listening ? const _PulseWave() : null,
                       onTap: _startReading,
+                      // 跟读中显示脉冲波纹动画代替文字
+                      // （child 必须放最前最后一个位置）
+                      child: _listening ? const _PulseWave() : null,
                     ),
                   ),
                 ],
