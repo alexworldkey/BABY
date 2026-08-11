@@ -74,7 +74,7 @@ class _FruitCardState extends State<FruitCard>
             // 手动控制模式：autoPlay 关闭，由 _bounceCtrl 驱动
             controller: _bounceCtrl,
             autoPlay: false,
-            effects: [
+            effects: const [
               // 注意：effects 列表内的多个效果是【同时播放】的，
               // 用 delay 错开形成"先缩小 → 再弹性弹回"的串联节奏
               ScaleEffect(
