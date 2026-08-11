@@ -1,0 +1,48 @@
+name: 构建宝宝英语启蒙 APK
+
+# 触发方式：
+# 1. 推送到 main 分支
+# 2. 或手动在 Actions 页面点击 "Run workflow"
+# 首次运行后可在 Actions 页面下载 Debug APK 安装到手机
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 安装 Flutter 稳定版（会自动匹配 pubspec 的 SDK 约束）
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: 'stable'
+          cache: true
+
+      # 补全缺失的平台模板文件（gradle wrapper 等）：
+      # flutter create 只补缺失文件，不会覆盖我们已写好的配置
+      - name: Scaffold missing platform files
+        run: flutter create --platforms=android --project-name baby_english --org com.example .
+
+      # 安装依赖并校验配置
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 静态分析：确保代码无错误
+      - name: Analyze
+        run: flutter analyze
+
+      # 编译 Debug APK（Android）
+      - name: Build APK
+        run: flutter build apk --debug
+
+      # 上传 APK 作为构建产物
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: baby-english-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
