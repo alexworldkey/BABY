@@ -19,7 +19,7 @@ jobs:
       # 安装 Flutter 稳定版（会自动匹配 pubspec 的 SDK 约束）
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
+          flutter-version: '3.27.x'
           channel: 'stable'
           cache: true
 
